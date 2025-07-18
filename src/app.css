@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.state {
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* grid-template-rows: repeat(2, 1fr); */
+
+  display: grid;
+  gap: 3em;
+}
+
+
+/* color theme from chess.com */
+
+.light {
+  --bcg: #edd6b0; /* rgb(237, 214, 176) */
+  --border: rgb(213.3, 192.6, 158.4); /* alpha = 0.9 */
+  --marked: #eb7863;
+  --select: #f6eb71;
+  --stone: #f9f9f9;
+}
+
+.dark {
+  --bcg: #b88762; /* rgb(184, 135, 98) */
+  --border: rgb(165.6, 121.5, 88.2); /* alpha = 0.9 */
+  --marked: #e16954;
+  --select: #dcc34a;
+  --stone: #5c5957;
+}
+
+.board {
+  display: grid;
+  
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* grid-template-rows: repeat(4, 1fr); */
+
+  gap: 0.2rem;
+  /* width: 100%; */
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  background-color: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  /* transform: scaleY(-1); */
+}
+
+.square {
+  /* width: 100%; */
+  /* height: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bcg);
+}
+
+.square img {
+  width: 85%;
+  height: 85%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.player {
+  padding: 5%;
+  text-align: center;
+}
+
+
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.board-container {
+  flex: 3;
+  padding-right: 20px;
+}
+
+.controls-container {
+  flex: 1;
+  /* min-width: 300px; */
+  /* border-left: 1px solid #ccc; */
+  padding-left: 20px;
+}
+
+.bot-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.upload-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.filename {
+  display: block;
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 5px;
+}
+
+.start-btn {
+  padding: 10px 15px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.start-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
